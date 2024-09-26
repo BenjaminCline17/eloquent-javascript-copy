@@ -27,9 +27,10 @@ LOGS =>
 */
 
 function triangles(number) {
-  //use a for loop to generate numbers
-  for (let i = 0; i <= number; i++){
-    console.log(number += "#");
+  //use a for loop to generate a line of #, adding a # each time we iterate
+  for (let i = "#"; i.length <= number; i += "#"){
+    //log i
+    console.log(i);
   }
 }
 
@@ -51,7 +52,22 @@ on the number:
 */
 
 function fizzBuzz(start, end) {
-  
+  //use a for loop to generate numbers
+  for (let i = start; i <= end; i++) {
+    //if current number is divisible by 3, log "fizz"
+    if (i % 3 == 0 && i % 5 != 0){
+      console.log("fizz");
+      //else if current number is divisible by 5, log "buzz"
+    } else if (i % 3 != 0 && i % 5 == 0){
+      console.log("buzz");
+      //else if current number is divisible by both 3 and 5, log "fizzbuzz"
+    } else if (i % 3 == 0 && i % 5 == 0){
+      console.log("fizzbuzz");
+      //else log the current number
+    } else { 
+      console.log(i);
+    }
+  } 
 }
 
 ////////////////////////////////////////////////////////////////////////////////
