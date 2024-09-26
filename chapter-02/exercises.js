@@ -101,8 +101,25 @@ LOGS =>
 */
 
 function drawChessboard(x) {
+//declare a empty string
+var result = "";
 
-
+//use a for loop to generate numbers
+for (let i = 0; i < x; i++){
+  //create a nested for loop to generate second group of numbers
+  for (let j = 0; j < x; j++){
+    //use an if statement to see if the result of i + j is divisible by 2
+    if ((i + j) % 2 == 0){
+      //if it is, add a space
+      result += " "
+    } else {//else add a "#"
+      result += "#"
+    }
+  }
+  //add a line break
+  result += "\n"
+}
+console.log(result); //log the result
 }
 
 ////////////////////////////////////////////////////////////////////////////////
