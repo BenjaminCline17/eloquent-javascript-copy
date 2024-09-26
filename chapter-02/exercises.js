@@ -26,8 +26,11 @@ LOGS =>
 
 */
 
-function triangles() {
-  
+function triangles(number) {
+  //use a for loop to generate numbers
+  for (let i = 0; i <= number; i++){
+    console.log(number += "#");
+  }
 }
 
 
