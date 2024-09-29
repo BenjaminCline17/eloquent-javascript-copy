@@ -60,15 +60,8 @@ for (let i = 0; i < string.length; i++){
 ////////////////////////////////////////////////////////////////////////////////
 
 function countBs(string) {
-//declare counter as a number
-let counter = 0;
-//use a for loop to iterate through the string
-for (let i = 0; i < string.length; i++){
-  //if the current character in the string equals "B", add one to the counter
-  if (string[i] == "B"){
-    counter++
-  }
-} return counter; //return the final result of counter
+  //return the result of calling countChars with the input string passed in for string, and "B" passed in for char
+return countChars(string, "B");
 }
 
 ////////////////////////////////////////////////////////////////////////////////
