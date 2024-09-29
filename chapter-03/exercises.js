@@ -23,11 +23,16 @@ if (num1 > num2){
 function isEven(n) {
 //use an if statement to see if n equals 0
 if (n == 0){
+  //if n equals 0, return true
   return true;
+  //else if n equals 1, return false
 } else if (n == 1){
   return false;
+  //else if n is less than 0
 } else if (n < 0){
+  //return the function begin invoked on negative n
   return isEven(-n);
+  // else, return the function being invoked on n - 2
 } else {
   return isEven(n - 2);
 }
@@ -37,16 +42,33 @@ if (n == 0){
 // countChars //////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countChars() {
-
+function countChars(string, char) {
+//declare counter as a number
+let counter = 0;
+//use a for loop to iterate through the string
+for (let i = 0; i < string.length; i++){
+  //use a if statement to determine if the current character in the string equals char
+  if (string[i] == char){
+    //add one to the counter
+    counter++;
+  }
+} return counter; //return the final result of counter
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // countBs /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countBs() {
-
+function countBs(string) {
+//declare counter as a number
+let counter = 0;
+//use a for loop to iterate through the string
+for (let i = 0; i < string.length; i++){
+  //if the current character in the string equals "B", add one to the counter
+  if (string[i] == "B"){
+    counter++
+  }
+} return counter; //return the final result of counter
 }
 
 ////////////////////////////////////////////////////////////////////////////////
