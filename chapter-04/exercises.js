@@ -67,7 +67,14 @@ for (let i = 0; i < Math.floor(array.length / 2); i++){
 // arrayToList /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function arrayToList() {
+function arrayToList(array) {
+  let rest = null;
+
+  for (let i = array.length - 1; i >= 0; i--){
+    rest = { value: array[i], rest: rest};
+  }
+
+  return rest;
 
 }
 
@@ -75,8 +82,16 @@ function arrayToList() {
 // listToArray /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function listToArray() {
+function listToArray(list, array=[]) {
+//base
+if (list.rest === null){
+  array.push(list.value);
+  return array;
+}
+//recursion
+array.push(list.value);
 
+return listToArray(list.rest, array);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
