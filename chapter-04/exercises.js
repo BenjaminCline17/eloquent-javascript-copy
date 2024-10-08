@@ -2,32 +2,65 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range() {
-
+function range(start, end, step=1) {
+//declare output as an empty array
+let output = [];
+//if start is less than end, count up using a for loop
+if (start < end && step > 0){
+  for (let i = start; i <= end; i += step){
+    //push the current number into output
+    output.push(i)
+  }
+} else if (start > end && step < 0){ //else if start is greater than end, count down using a for loop
+for (let i = start; i >= end; i -= step){
+  //push the current number into output
+  output.push(i)
+}
+} return output; //return output
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function sum() {
-
+function sum(array) {
+//declare result as 0
+let result = 0;
+//use a for loop to iterate through the array
+for (let i = 0; i < array.length; i++){
+  //add the current number to result
+  result += array[i];
+} return result; //return result
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // reverseArray ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArray() {
-
+function reverseArray(array) {
+  //declare output as an empty array
+let output = [];
+//use a for loop to iterate through the array backwards
+for (let i = array.length - 1; i >= 0; i--){
+  //push the current element into the output array
+  output.push(array[i]);
+} return output; //return output
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // reverseArrayInPlace /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArrayInPlace() {
-
+function reverseArrayInPlace(array) {
+//use a for loop to iterate through half the array
+for (let i = 0; i < Math.floor(array.length / 2); i++){
+  //declare temp as the current element of array
+  let temp = array[i];
+  //set the current element equal to the length of the array minus 1 minus the current index
+  array[i] = array[array.length - 1 - i];
+  //set the result of the array length minus 1 minus i to temp
+  array[array.length - 1 - i] = temp;
+} return array; //return array
 }
 
 ////////////////////////////////////////////////////////////////////////////////
