@@ -109,11 +109,14 @@ return startAdd; //return startAdd
 ////////////////////////////////////////////////////////////////////////////////
 
 function nth(list, number) {
+  //if there is no list, return undefined
 if (!list){
   return undefined
+  //else if number equals 0, return the value of list
 } else if (number == 0){
   return list.value;
 } else {
+  //else return the nth function with the rest element of list and the number - 1
   return nth(list.rest, number - 1);
 }
 }
@@ -123,26 +126,29 @@ if (!list){
 ////////////////////////////////////////////////////////////////////////////////
 
 function deepEqual(x, y) {
+  //use an if statement to determine if x and y are not objects
 if (typeof x !== "object" && typeof y !== "object"){
   return x === y;
 }
+//use an if statement to determine x or y are not objects
 if (typeof x !== "object" || typeof y !== "object"){
   return false;
 }
-
+//create arrays of both of the input keys
 let xKeys = Object.keys(x);
 let yKeys = Object.keys(y);
-
+//if the length of Xkeys is not the same as the length of yKeys, return false
 if (xKeys.length !== yKeys.length){
   return false;
 }
-
+//use a for loop to iterate to determine if the array keys match and the values at keys match
 for (let i = 0; i < xKeys.length; i++){
+  //if the current key is not included in yKeys, return false
   if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])){
     return false;
   }
 }
-return true;
+return true; //return true if x and y deeply equal each other
 }
 
 ////////////////////////////////////////////////////////////////////////////////
